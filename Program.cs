@@ -14,11 +14,7 @@ namespace Fractions
 
             Fraction fg = f.Mul(g);
 
-            Console.Write(f);
-            Console.Write(" * ");
-            Console.Write(g);
-            Console.Write(" = ");
-            Console.WriteLine(fg);
+            Console.WriteLine($"{f} * {g} = {fg}");
         }
 
 
