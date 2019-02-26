@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Fractions
 {
@@ -9,8 +10,8 @@ namespace Fractions
         internal static void RunTests()
         {
             Console.WriteLine("Running tests.....");
-            //Test_MathConcepts();
-            Test_Fractions();
+            Test_MathConcepts();
+            //Test_Fractions();
 
             Console.WriteLine("Tests over...");
         }
@@ -22,7 +23,36 @@ namespace Fractions
 
         internal static void Test_MathConcepts()
         {
-            Test_LCM();
+            //Test_LCM();
+            Test_PrimeFactors(600);
+            //Test_YieldConcept();
+            //Test_StepPrime();
+        }
+
+        internal static void Test_StepPrime()
+        {
+            PrimeProvider pp = new PrimeProvider();
+            foreach(int i in pp.StepPrimes())
+            {
+                Console.WriteLine($"i : {i}");
+                if( i > 100 ) break;
+            }
+        }
+        internal static void Test_YieldConcept()
+        {
+            PrimeProvider pp = new PrimeProvider();
+            foreach(int i in pp.Even())
+            {
+                Console.WriteLine(i);
+                if( i > 100 ) break;
+            }
+        }
+
+        internal static void Test_PrimeFactors(int n)
+        {
+            List<int> li = MathExtensions.PrimeFactors(n);
+            foreach(int i in li) { Console.Write(i + ","); }
+            Console.WriteLine();
         }
 
         internal static void Test_Fractions()
